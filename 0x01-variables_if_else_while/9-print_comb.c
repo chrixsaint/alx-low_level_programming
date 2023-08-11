@@ -1,24 +1,23 @@
 #include <stdio.h>
 /**
- * main - prints hexa numbers
+ * main - print numbers separated by commas & space
  *
  * Return: (0)
  *
  */
 int main(void)
 {
-	char numbers = '0';
-	char letters = 'a';
+	int numbers = '0';
 
 	while (numbers <= '9')
 	{
 		putchar(numbers);
+		if (numbers <= '8')
+		{
+			putchar(',');
+			putchar(' ');
+		}
 		numbers++;
-	}
-	while (letters <= 'f')
-	{
-		putchar(letters);
-		letters++;
 	}
 	putchar('\n');
 	return (0);
