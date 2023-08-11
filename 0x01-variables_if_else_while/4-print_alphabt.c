@@ -1,21 +1,21 @@
 #include <stdio.h>
 /**
- * main - print letters except q and e
+ * main - print alhabets except q and e
  *
  * Return: always (0)
  *
  */
 int main(void)
 {
-	char latters = 'a';
+	char alphabet = 'a';
 
-	while (latters <= 'z')
+	while (alphabet <= 'z')
 	{
-		if (latters != 'q' && latters != 'e')
+		if (alphabet != 'q' && alphabet != 'e')
 		{
-			putchar(latters);
+			putchar(alphabet);
 		}
-		latterst++;
+		alphabet++;
 	}
 	putchar('\n');
 	return (0);
