@@ -1,25 +1,24 @@
-#include <stdio.h>
-/**
- * main - print alphabet in caps and low.
- *
- * Return: (0);
- *
- */
-int main(void)
-{
-	char Lower = 'a';
-	char Upper = 'A';
+#include "main.h"
 
-	while (Lower <= 'z')
+/**
+ * _islower - Shows 1 if the input is a
+ * lowercase character. Another cases, shows
+ * 0
+ *
+ * @c: The character in ASCII code
+ *
+ * Return: 1 for lowercase character. 0 for the rest.
+ */
+
+int _islower(int c)
+{
+	if (c >= 97 && c <= 122)
 	{
-		putchar(Lower);
-		Lower++;
+		return (1);
 	}
-	while (Upper <= 'Z')
+	else
 	{
-		putchar(Upper);
-		Upper++;
+		return (0);
 	}
-	putchar('\n');
-	return (0);
+	_putchar('\n');
 }
