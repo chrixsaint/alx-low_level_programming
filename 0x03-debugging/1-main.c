@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 /**
- *main - causes of an infinit loop
- *Return: (0)
+ * main - causes of an infinit loop
+ * Description: about the infinit loop
+ * Return: (0);
  */
 
 int main(void)
