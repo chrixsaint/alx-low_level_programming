@@ -21,6 +21,5 @@ int main(void)
 	 */
 
 	printf("infinit loop avoided! \\o/\n");
-
 	return (0);
 }
