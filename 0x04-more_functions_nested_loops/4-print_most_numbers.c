@@ -1,20 +1,19 @@
 #include "main.h"
-
 /**
- *print_most_numbers - print 0 to 10
- *Return: void
+ * print_most_numbers - is the main function
+ *
+ * Return: as specified
  */
-
 void print_most_numbers(void)
 {
-	char c;
+	int i;
 
-	for (c = 'O'; c <= '9'; c++)
+	for (i = 0; i <= 9; i++)
 	{
-		if (!(c == '2' || c == '4'))
+		if (i != 2 && i != 4)
 		{
-			_putchar('c');
+			_putchar(i + '0');
 		}
-	_putchar('\n');
 	}
+	_putchar('\n');
 }
