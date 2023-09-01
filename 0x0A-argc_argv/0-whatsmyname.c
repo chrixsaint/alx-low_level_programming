@@ -15,12 +15,7 @@ int main(int argc, char *argv[])
 	{
 		char *program_name = basename(argv[0]);
 
-		printf("%s\n", program_name);
-	}
-	else
-	{
-		printf("program name not available.\n);
+		printf("./%s\n", program_name);
 	}
 	return (0);
 }
-
