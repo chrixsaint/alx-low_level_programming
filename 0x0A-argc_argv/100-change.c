@@ -12,6 +12,7 @@
 int main(int argc, char *argv[])
 {
 	int cents, coins;
+	(void)argv;
 
 	if (argc != 2)
 	{
