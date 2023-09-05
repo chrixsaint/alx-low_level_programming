@@ -20,16 +20,28 @@ int is_space(char c)
  *Return: number of words
  */
 
-
 int count_words(char *str)
 {
+	int num_words, in_word;
 	char *p;
-	int num_words;
 
 	num_words = 0;
-	for (p = str; *p; p++)
-		if (!is_space(*p) && (p == str || is_space(*(p - 1))))
-			num_words++;
+	in_word = 0;
+	for (char *p = str; *p; p++)
+	{
+		if (!is_space(*p))
+		{
+			if (!in_word)
+			{
+				num_words++;
+				in_word = 1;
+			}
+		}
+		else
+		{
+			in_word = 0;
+		}
+	}
 	return (num_words);
 }
 
