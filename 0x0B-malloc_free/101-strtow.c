@@ -25,11 +25,13 @@ int count_words(char *str)
 	int num_words, in_word;
 	char *p;
 
-	num_words = 0;
-	in_word = 0;
-	for (p = str; *p; p++)
+	while (*str && is_space(*str))
 	{
-		if (!is_space(*p))
+		str++;
+	}
+	while (*str)
+	{
+		if (!is_space(*str))
 		{
 			if (!in_word)
 			{
@@ -41,8 +43,9 @@ int count_words(char *str)
 		{
 			in_word = 0;
 		}
+		str++;
 	}
-	return (num_words);
+	return num_words;
 }
 
 /**
