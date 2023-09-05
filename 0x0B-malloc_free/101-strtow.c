@@ -23,7 +23,6 @@ int is_space(char c)
 int count_words(char *str)
 {
 	int num_words, in_word;
-	char *p;
 
 	while (*str && is_space(*str))
 	{
@@ -45,7 +44,7 @@ int count_words(char *str)
 		}
 		str++;
 	}
-	return num_words;
+	return (num_words);
 }
 
 /**
