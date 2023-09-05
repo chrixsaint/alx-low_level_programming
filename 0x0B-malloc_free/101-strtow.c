@@ -34,7 +34,7 @@ int count_words(char *str)
 }
 
 /**
- * *split_words - function that splits word
+ * split_words - function that splits word
  * @str: string
  * @num_words: number of words
  *Return: words when successful
@@ -74,7 +74,7 @@ char **split_words(char *str, int num_words)
 	return (words);
 }
 /**
- * **strtow - main entry
+ * strtow - main entry
  * @str: string
  * Return: split_words, str and num_words when successful
  */
