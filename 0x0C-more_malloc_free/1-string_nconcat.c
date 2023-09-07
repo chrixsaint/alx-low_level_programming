@@ -18,7 +18,6 @@
  * Return: A pointer to the newly allocated concatenated string or
  * NULL on failure.
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *concatenated;
@@ -29,19 +28,21 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
-	len = strlen(s1);
+	len1 = strlen(s1);
 	len2 = strlen(s2);
 
 	if (n >= len2)
 		n = len2;
-
 	concatenated = malloc(len1 + n + 1);
 
 	if (concatenated == NULL)
 		return (NULL);
+
 	for (i = 0; s1[i] != '\0'; i++)
-		concatenated[i] = s1[1];
+		concatenated[i] = s1[i];
+
 	for (j = 0; j < n; j++, i++)
-		concatenated[I] = s2[j];
+		concatenated[i] = s2[j];
 	concatenated[i] = '\0';
 	return (concatenated);
+}
