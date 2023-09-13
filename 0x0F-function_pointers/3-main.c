@@ -1,30 +1,48 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "3-calc.h"
+#include <string.h>
+
+/**
+ * main - function starts here.
+ * @argc: number of arguments in array
+ * @argv: array of arguments.
+ *
+ * Return: 0 if successful. 1 otherwise.
+ */
 
 int main(int argc, char *argv[])
 {
-	int num1, num2, result;
-	int (*operation)(int, int);
-	char *operator;
+	int i, j;
 
-	if (argc != 4)
+	/* Checks number of arguments */
+	if (argc < 4 || argc > 4)
 	{
 		printf("Error\n");
 		return (98);
 	}
-	num1 = atoi(argv[1]);
-	operator = argv[2];
-	num2 = atoi(argv[3]);
 
-	operation = get_op_func(operator);
-	if (operation == NULL)
+	/* Checks operator validity */
+	if ((*argv[2] != '+' && *argv[2] != '-'
+	&& *argv[2] != '*' && *argv[2] != '/'
+	&& *argv[2] != '%') || (strlen(argv[2]) > 1))
 	{
 		printf("Error\n");
 		return (99);
 	}
-	result = (*operation)(num1, num2);
-	printf("%d\n", result);
+
+	/* Check invalid division by 0 operation */
+	if ((*argv[2] == '/' || *argv[2] == '%')
+	&& *argv[3] == '0')
+	{
+		printf("Error\n");
+		return (100);
+	}
+
+	/* Store arguments in int variables */
+	i = atoi(argv[1]);
+	j = atoi(argv[3]);
+
+	/* Call function to check operator and add */
+	(*get_op_func(argv[2]))(i, j);
 
 	return (0);
 }
