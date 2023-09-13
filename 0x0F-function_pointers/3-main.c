@@ -1,30 +1,30 @@
-#include "3-calc.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include "3-calc.h"
 
 int main(int argc, char *argv[])
 {
-	int num1, num2;
-
-	int (*op_func)(int, int);
+	int num1, num2, result;
+	int (*operation)(int, int), result;
+	char *operator;
 
 	if (argc != 4)
 	{
 		printf("Error\n");
-		{
-			exit(98);
-		}
+		return (98);
 	}
 	num1 = atoi(argv[1]);
+	*operator = argv[2];
 	num2 = atoi(argv[3]);
-	op_func = get_op_func(argv[2]);
-	if (op_func == NULL)
+
+	(*operation)(int, int) = get_op_func(operator);
+	if (operation == NULL)
 	{
 		printf("Error\n");
-		{
-			exit(99);
-		}
+		return (99);
 	}
-	printf("%d\n", op_func(num1, num2));
+	result = operation(num1, num2);
+	printf("%d\n", result);
+
 	return (0);
 }
