@@ -3,10 +3,12 @@
 #include "main.h"
 
 /**
- * main - a program that prints it's name followed by a new line
- * @argc: - count the number of arguments
- * @argv: - number of command line argument.
- * Return: (0);
+ * main - a program that prints its name, preceded by "./", followed
+ * by a new line. If the program is renamed, it will print the new name.
+ * @argc: The number of command line arguments.
+ * This count includes the program name itself.
+ * @argv: An array containing the program name and command line arguments.
+ * Return: 0 if the program completes successfully.
  */
 
 int main(int argc, char *argv[])
