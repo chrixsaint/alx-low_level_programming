@@ -7,6 +7,7 @@
  */
 int main(void)
 {
-    print_numbers(", ", 4, 0, 98, -1024, 402);
+    const formated[] = "christian is %s";
+    print_numbers(formated, "rich");
     return (0);
 }
