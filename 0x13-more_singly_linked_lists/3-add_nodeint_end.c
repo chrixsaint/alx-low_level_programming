@@ -10,36 +10,28 @@
  */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-    listint_t *new;
-    listint_t *last = *head;  /* used in step 5*/
+	listint_t *new;
+	listint_t *last = *head;/* used in step 5*/
 
-    /* allocate node */
-    new = malloc(sizeof(listint_t));
-
-    if (new == NULL)
-    {
-        return (NULL);
-    }
-
-    /* put in the data  */
-    new->n = n;
-
-    /* This new node is going to be the last node, so make next of it as NULL*/
-    new->next = NULL;
-
-    /* If the Linked List is empty, then make the new node as head */
-    if (*head == NULL)
-    {
-       *head = new;
-       return (new);
-    }
-
-    /* Else traverse till the last node */
-    while (last->next != NULL)
-        last = last->next;
-
-    /* Change the next of last node */
-    last->next = new;
-
-    return (new);
+	/* allocate node */
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
+	{
+		return (NULL);
+	}
+	/* put in the data  */
+	new->n = n;
+	new->next = NULL;
+	/* If the Linked List is empty, then make the new node as head */
+	if (*head == NULL)
+	{
+		*head = new;
+		return (new);
+	}
+	/* Else traverse till the last node */
+	while (last->next != NULL)
+		last = last->next;
+	/* Change the next of last node */
+	last->next = new;
+	return (new);
 }
