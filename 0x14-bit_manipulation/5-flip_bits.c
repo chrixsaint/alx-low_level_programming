@@ -1,21 +1,21 @@
 #include <stdio.h>
 #include "main.h"
 /**
-* get_endianness - checks the endianness of the system
-* Return: 0 if big endian, 1 if little endian
+* flip_bits - Computes the number of bits that need to be flipped to transform
+* @n: The first unsigned long integer.
+* @m: The second unsigned long integer.
+* Return: The number of bits that need to be flipped to transform @n into @m.
 */
-int get_endianness(void)
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int i = 1;
-	char *ptr = (char *)&i;
+	unsigned long int xor;
+	unsigned long int count = 0;
 
-	if (*ptr == 1)
+	xor =  n ^ m;  /* puts 1 at different values posithions*/
+	while (xor != 0)
 	{
-		return (1);
+		count += xor & 1; /*extract the least significant bit of the XOR*/
+		xor >>= 1; /*move loop*/
 	}
-	else
-	{
-		return (-1);
-	}
-
+	return (count);
 }
