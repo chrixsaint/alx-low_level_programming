@@ -1,9 +1,8 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * _puts - write strings with new line
- * @str: is the integer used
- *
+ * _puts - This functions prints a value.
+ * @str: This is a param to be reset.
  */
 void _puts(char *str)
 {
